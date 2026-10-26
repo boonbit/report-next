@@ -1,0 +1,311 @@
+/* Report panels: explorer tree, inspector rows, preview and source.
+   Uses the designer-next tokens from styles/tokens.css. */
+
+.tree {
+  padding: 4px 2px 16px;
+}
+
+.tree-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 6px;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  font-size: 12px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.tree-item:hover {
+  background: #eef3f9;
+}
+
+.tree-item.sel {
+  background: var(--ide-select);
+  border-color: #a8c9e8;
+}
+
+.tree-toggle {
+  width: 16px;
+  flex: none;
+  text-align: center;
+  color: var(--ide-muted);
+  cursor: pointer;
+}
+
+.tree-kids {
+  margin-left: 14px;
+}
+
+.attr-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) auto;
+  gap: 4px;
+  margin: 3px 0;
+}
+
+.attr-row .input {
+  min-height: 22px;
+  font-size: 12px;
+}
+
+.field-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 6px 0;
+  font-size: 12px;
+}
+
+.field-row .input {
+  flex: 1;
+}
+
+.insp-head {
+  margin: 10px 4px 4px;
+  color: var(--ide-muted);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.insp-head:first-child {
+  margin-top: 2px;
+}
+
+.preview-pane {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  background: #dfe4ea;
+}
+
+.preview-bar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex: none;
+  padding: 6px 8px;
+  background: #f1f4f8;
+  border-bottom: 1px solid var(--ide-line-soft);
+}
+
+.preview-body {
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+  padding: 12px;
+}
+
+.preview-body iframe {
+  width: 100%;
+  height: 100%;
+  min-height: 420px;
+  border: 1px solid var(--ide-line);
+  background: #ffffff;
+}
+
+.source-wrap {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.hidden-import {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.tree-btns {
+  margin-left: auto;
+  display: inline-flex;
+  gap: 2px;
+}
+
+.tree-btn {
+  padding: 0 5px;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.tree-btn.danger {
+  color: var(--ide-danger, #b3261e);
+}
+
+.canvas-scroll {
+  flex: 1;
+  overflow: auto;
+  padding: 16px;
+  background: var(--ide-canvas, #e8eaed);
+}
+
+.canvas-sheet {
+  position: relative;
+  margin: 0 auto 24px auto;
+  background: #ffffff;
+  border: 1px solid var(--ide-line);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+}
+
+.canvas-band {
+  position: relative;
+  border-top: 1px dashed #9aa0a6;
+}
+
+.canvas-band-head {
+  font-size: 11px;
+  color: #5f6368;
+  padding: 1px 6px;
+  background: #f1f3f4;
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.canvas-band-head.sel {
+  background: #d2e3fc;
+  color: #1a73e8;
+}
+
+.canvas-obj {
+  position: absolute;
+  border: 1px dashed #9aa0a6;
+  font-size: 10px;
+  color: #5f6368;
+  overflow: hidden;
+  cursor: move;
+  background: rgba(255, 255, 255, 0.6);
+  user-select: none;
+  touch-action: none;
+}
+
+.canvas-obj.sel {
+  border: 1px solid #1a73e8;
+  outline: 1px solid #1a73e8;
+}
+
+.canvas-obj span {
+  display: block;
+  padding: 0 3px;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.dock {
+  flex: none;
+  height: 168px;
+}
+
+.dock-tabs {
+  display: inline-flex;
+  gap: 4px;
+}
+
+.dock-body {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 6px 10px;
+  font-size: 12px;
+}
+
+.log-line {
+  white-space: pre-wrap;
+}
+
+.issue-row {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  padding: 2px 0;
+  cursor: pointer;
+  color: inherit;
+  font: inherit;
+}
+
+.issue-row:hover {
+  text-decoration: underline;
+}
+
+.canvas-resize {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 10px;
+  height: 10px;
+  background: #1a73e8;
+  border: 1px solid #ffffff;
+  cursor: nwse-resize;
+  touch-action: none;
+}
+
+/* Canvas snap guides (shown while a snapped drag/resize is active). */
+.canvas-guide {
+  position: absolute;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.canvas-guide[data-orient='v'] {
+  top: 0;
+  bottom: 0;
+  width: 0;
+  border-left: 1px dashed #1a73e8;
+}
+
+.canvas-guide[data-orient='h'] {
+  left: 0;
+  right: 0;
+  height: 0;
+  border-top: 1px dashed #1a73e8;
+}
+
+.insp-section {
+  margin: 2px 0;
+}
+
+.insp-section-head {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  width: 100%;
+  padding: 3px 4px;
+  background: none;
+  border: none;
+  border-bottom: 1px solid var(--ide-line);
+  cursor: pointer;
+  font: inherit;
+  color: inherit;
+  text-align: left;
+}
+
+.insp-section-toggle {
+  width: 14px;
+  color: #5f6368;
+}
+
+.insp-section-body {
+  padding: 2px 0 2px 6px;
+}
+
+.palette-rail {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 6px 4px;
+}
+
+.palette-btn {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}

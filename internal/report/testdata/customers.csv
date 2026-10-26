@@ -1,0 +1,4 @@
+CustomerID,CompanyName,ContactName,City,Country,Orders
+ALFKI,Alfreds Futterkiste,Maria Anders,Berlin,Germany,6
+ANATR,Ana Trujillo Emparedados,Ana Trujillo,México D.F.,Mexico,4
+ANTON,Antonio Moreno Taquería,Antonio Moreno,México D.F.,Mexico,7

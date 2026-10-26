@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="10/26/2026 00:00:00" ReportInfo.CreatorVersion="1.0.0.0">
+  <Dictionary/>
+  <ReportPage Name="Page1">
+    <DataBand Name="Data1" Width="718.2" Height="60" DataSource="Customers">
+      <CheckBoxObject Name="Check1" Left="10" Top="5" Width="28" Height="28" DataColumn="Customers.Country"/>
+      <TextObject Name="TextName" Left="60" Top="5" Width="300" Height="28.35" Text="[Customers.CompanyName]"/>
+      <CheckBoxObject Name="CheckStatic" Left="370" Top="5" Width="28" Height="28" Checked="false"/>
+    </DataBand>
+  </ReportPage>
+</Report>

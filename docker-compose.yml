@@ -1,0 +1,56 @@
+# report-next deployment: designer app + optional live databases.
+#
+#   docker compose up -d --build        # app only -> http://localhost:8080/
+#   docker compose --profile live up -d # app + postgres + sqlserver
+#
+# Live round-trip tests (need the app network + DSNs):
+#   REPORT_PG_DSN='postgres://report:report@pg:5432/reportnext?sslmode=disable' \
+#   REPORT_MSSQL_DSN='sqlserver://sa:Report123!@mssql:1433?database=master' \
+#   go test -count=1 -run TestSQLLive ./internal/report/
+
+services:
+  app:
+    build:
+      context: ..
+      dockerfile: report-next/Dockerfile
+    ports:
+      - "8080:8080"
+    restart: unless-stopped
+
+  pg:
+    image: postgres:17-alpine
+    profiles: ["live"]
+    environment:
+      POSTGRES_USER: report
+      POSTGRES_PASSWORD: report
+      POSTGRES_DB: reportnext
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U report -d reportnext"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  mssql:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    profiles: ["live"]
+    environment:
+      ACCEPT_EULA: "Y"
+      SA_PASSWORD: "Report123!"
+    ports:
+      - "1433:1433"
+    volumes:
+      - mssqldata:/var/opt/mssql
+    healthcheck:
+      test: ["CMD-SHELL", "/opt/mssql-tools18/bin/sqlcmd -S localhost -U sa -P 'Report123!' -C -Q 'SELECT 1'"]
+      interval: 15s
+      timeout: 10s
+      retries: 10
+      start_period: 60s
+
+volumes:
+  pgdata:
+  mssqldata:

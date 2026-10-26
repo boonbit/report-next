@@ -1,0 +1,5 @@
+[
+  {"CustomerID": "ALFKI", "CompanyName": "Alfreds Futterkiste", "ContactName": "Maria Anders", "City": "Berlin", "Country": "Germany", "Orders": 6},
+  {"CustomerID": "ANATR", "CompanyName": "Ana Trujillo Emparedados", "ContactName": "Ana Trujillo", "City": "México D.F.", "Country": "Mexico", "Orders": 4},
+  {"CustomerID": "ANTON", "CompanyName": "Antonio Moreno Taquería", "ContactName": "Antonio Moreno", "City": "México D.F.", "Country": "Mexico", "Orders": 7}
+]

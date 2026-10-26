@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="10/26/2026 00:00:00" ReportInfo.CreatorVersion="1.0.0.0">
+  <Dictionary/>
+  <ReportPage Name="Page1">
+    <ReportTitleBand Name="ReportTitle1" Width="718.2" Height="90" OutlineExpression="Cover">
+      <TextObject Name="Title1" Width="718.2" Height="28.35" Text="Outline demo report" Font="Segoe UI, 10pt, style=Bold"/>
+      <TextObject Name="LinkWeb" Top="28.35" Width="359.1" Height="28.35" Cursor="Hand" Hyperlink.Value="https://example.com" Text="Visit example site" TextFill.Color="Blue"/>
+      <TextObject Name="LinkPage" Left="359.1" Top="28.35" Width="359.1" Height="28.35" Cursor="Hand" Hyperlink.Value="2" Text="Go to chapter two"/>
+    </ReportTitleBand>
+    <ChildBand Name="Child1" Width="718.2" Height="700" OutlineExpression="Chapter One">
+      <TextObject Name="Text1" Width="718.2" Height="28.35" Text="First chapter body"/>
+    </ChildBand>
+    <ChildBand Name="Child2" Width="718.2" Height="700" OutlineExpression="Chapter Two">
+      <TextObject Name="Text2" Width="718.2" Height="28.35" Text="Second chapter body"/>
+    </ChildBand>
+    <PageFooterBand Name="PageFooter1" Width="718.2" Height="28.35">
+      <TextObject Name="TextPage" Left="600" Width="118.2" Height="28.35" Text="Page [PageN] of [TotalPages]"/>
+    </PageFooterBand>
+  </ReportPage>
+</Report>

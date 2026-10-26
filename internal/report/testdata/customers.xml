@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Customers>
+  <Customer>
+    <CustomerID>ALFKI</CustomerID>
+    <CompanyName>Alfreds Futterkiste</CompanyName>
+    <ContactName>Maria Anders</ContactName>
+    <City>Berlin</City>
+    <Country>Germany</Country>
+    <Orders>6</Orders>
+  </Customer>
+  <Customer>
+    <CustomerID>ANATR</CustomerID>
+    <CompanyName>Ana Trujillo Emparedados</CompanyName>
+    <ContactName>Ana Trujillo</ContactName>
+    <City>México D.F.</City>
+    <Country>Mexico</Country>
+    <Orders>4</Orders>
+  </Customer>
+  <Customer>
+    <CustomerID>ANTON</CustomerID>
+    <CompanyName>Antonio Moreno Taquería</CompanyName>
+    <ContactName>Antonio Moreno</ContactName>
+    <City>México D.F.</City>
+    <Country>Mexico</Country>
+    <Orders>7</Orders>
+  </Customer>
+</Customers>

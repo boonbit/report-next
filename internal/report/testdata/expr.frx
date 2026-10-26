@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="10/26/2026 00:00:00" ReportInfo.CreatorVersion="1.0.0.0">
+  <Dictionary/>
+  <ReportPage Name="Page1">
+    <ChildBand Name="Child1" Width="718.2" Height="200">
+      <TextObject Name="T1" Top="5" Width="700" Height="20" Text="[TitleCase(&quot;hello world&quot;)]"/>
+      <TextObject Name="T2" Top="30" Width="700" Height="20" Text="[PadLeft(&quot;7&quot;,3,&quot;0&quot;)]"/>
+      <TextObject Name="T3" Top="55" Width="700" Height="20" Text="[AddDays(&quot;2026-01-01&quot;,1)]"/>
+      <TextObject Name="T4" Top="80" Width="700" Height="20" Text="[DaysInMonth(2026,2)]"/>
+      <TextObject Name="T5" Top="105" Width="700" Height="20" Text="[Switch(1,&quot;one&quot;,0,&quot;two&quot;)]"/>
+      <TextObject Name="T6" Top="130" Width="700" Height="20" Text="[Maximum(3,7)]"/>
+    </ChildBand>
+  </ReportPage>
+</Report>

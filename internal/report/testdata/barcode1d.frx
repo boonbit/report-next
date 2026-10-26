@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="10/26/2026 00:00:00" ReportInfo.CreatorVersion="1.0.0.0">
+  <Dictionary/>
+  <ReportPage Name="Page1">
+    <ChildBand Name="Child1" Width="718.2" Height="200">
+      <BarcodeObject Name="Bar128" Top="5" Width="300" Height="60" Barcode="Code128" Text="HELLO128"/>
+      <BarcodeObject Name="BarEan" Top="70" Width="300" Height="60" Barcode="EAN13" Text="5901234123457"/>
+      <BarcodeObject Name="BarUpc" Top="135" Width="300" Height="60" Barcode="UPC-A" Text="036000291452"/>
+    </ChildBand>
+  </ReportPage>
+</Report>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="10/26/2026 00:00:00" ReportInfo.CreatorVersion="1.0.0.0">
+  <Dictionary/>
+  <ReportPage Name="Page1">
+    <ReportTitleBand Name="ReportTitle1" Width="718.2" Height="40">
+      <TextObject Name="Title1" Width="718.2" Height="28.35" Text="Grow demo"/>
+    </ReportTitleBand>
+    <ChildBand Name="Child1" Width="718.2" Height="60" KeepTogether="true" ShiftMode="true">
+      <TextObject Name="Long1" Top="5" Width="700" Height="20" CanGrow="true" Font="Segoe UI, 10pt" Text="First forced line of growing text&#10;Second forced line of growing text&#10;Third line carries GROWTAILMARKER"/>
+      <TextObject Name="Below1" Top="30" Width="700" Height="20" Text="after long text"/>
+    </ChildBand>
+  </ReportPage>
+</Report>

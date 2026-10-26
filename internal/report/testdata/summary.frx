@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="10/26/2026 00:00:00" ReportInfo.CreatorVersion="1.0.0.0">
+  <Dictionary/>
+  <ReportPage Name="Page1">
+    <ReportTitleBand Name="ReportTitle1" Width="718.2" Height="40">
+      <TextObject Name="Title1" Width="718.2" Height="28.35" Text="Summary demo"/>
+    </ReportTitleBand>
+    <ChildBand Name="Child1" Width="718.2" Height="60">
+      <TextObject Name="Text1" Width="718.2" Height="28.35" Text="body row"/>
+    </ChildBand>
+    <ReportSummaryBand Name="Summary1" Width="718.2" Height="40">
+      <TextObject Name="TextSum" Width="718.2" Height="28.35" Text="Summary tail"/>
+    </ReportSummaryBand>
+    <OverlayBand Name="Overlay1" Width="718.2" Height="30">
+      <TextObject Name="TextOver" Width="718.2" Height="20" Text="Overlay every page"/>
+    </OverlayBand>
+  </ReportPage>
+</Report>

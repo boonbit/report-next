@@ -1,0 +1,365 @@
+/* IDE shell chrome shared with designer-next (same look and class names).
+   Source: designer-next/web/src/styles/tokens.css. */
+:root {
+  color-scheme: light;
+  --ide-ink: #1c2430;
+  --ide-muted: #5c6878;
+  --ide-faint: #8b96a5;
+  --ide-bg: #eef1f5;
+  --ide-chrome: #e5e9ef;
+  --ide-chrome-2: #dde3ea;
+  --ide-panel: #f8f9fb;
+  --ide-field: #ffffff;
+  --ide-line: #b7c2cf;
+  --ide-line-soft: #d5dce5;
+  --ide-bevel-light: #ffffff;
+  --ide-bevel-dark: #99a5b4;
+  --ide-accent: #0b5cab;
+  --ide-accent-2: #1a7bd0;
+  --ide-accent-soft: #dcecfa;
+  --ide-ok: #0a6b3d;
+  --ide-ok-soft: #e2f5ea;
+  --ide-warn: #9a5b00;
+  --ide-warn-soft: #fff3da;
+  --ide-bad: #b42318;
+  --ide-bad-soft: #fdecea;
+  --ide-select: #cfe4f8;
+  --ide-deep: #23303f;
+  --font-ui: "Segoe UI", Tahoma, ui-sans-serif, system-ui, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+  --shadow-pop: 0 8px 28px rgb(18 30 45 / 22%), 0 2px 6px rgb(18 30 45 / 12%);
+  font-family: var(--font-ui);
+  font-size: 13px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  overflow: hidden;
+  background: var(--ide-bg);
+  color: var(--ide-ink);
+  font-size: 13px;
+  -webkit-font-smoothing: antialiased;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: default;
+}
+
+a {
+  color: var(--ide-accent);
+}
+
+code,
+kbd,
+pre {
+  font-family: var(--font-mono);
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+}
+
+::-webkit-scrollbar {
+  width: 14px;
+  height: 14px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f4f7;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c2ccd8;
+  border: 3px solid #f1f4f7;
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a4b1c0;
+}
+
+:focus-visible {
+  outline: 1px dotted var(--ide-accent);
+  outline-offset: 1px;
+}
+
+/* Classic beveled command buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 26px;
+  padding: 3px 10px;
+  border: 1px solid var(--ide-line);
+  border-top-color: var(--ide-bevel-light);
+  border-left-color: var(--ide-bevel-light);
+  border-radius: 2px;
+  background: linear-gradient(#fdfefe, #e8edf3);
+  color: var(--ide-ink);
+  font-size: 12px;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.btn:hover:not(:disabled) {
+  border-color: var(--ide-accent-2);
+  background: linear-gradient(#ffffff, #dfeaf6);
+}
+
+.btn:active:not(:disabled) {
+  border-top-color: var(--ide-bevel-dark);
+  border-left-color: var(--ide-bevel-dark);
+  background: #dde6f0;
+}
+
+.btn:disabled {
+  color: var(--ide-faint);
+  background: #f0f2f5;
+  border-color: var(--ide-line-soft);
+}
+
+.btn.primary {
+  border-color: #084c8d;
+  background: linear-gradient(#2685d4, #0b5cab);
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.btn.primary:hover:not(:disabled) {
+  background: linear-gradient(#3b97e2, #0f66b8);
+}
+
+.btn.primary:disabled {
+  background: #b7c7d8;
+  border-color: #a6b6c7;
+  color: #eef3f8;
+}
+
+.btn.quiet {
+  border-color: transparent;
+  background: transparent;
+}
+
+.btn.quiet:hover:not(:disabled) {
+  border-color: var(--ide-line);
+  background: #ffffff;
+}
+
+.btn.danger {
+  color: var(--ide-bad);
+}
+
+.btn.small {
+  min-height: 22px;
+  padding: 2px 7px;
+  font-size: 11.5px;
+}
+
+.icon-btn {
+  width: 26px;
+  height: 26px;
+  display: inline-grid;
+  place-items: center;
+  padding: 0;
+}
+
+.input,
+.select,
+.textarea {
+  width: 100%;
+  min-height: 24px;
+  padding: 3px 6px;
+  border: 1px solid var(--ide-line);
+  border-radius: 2px;
+  background: var(--ide-field);
+  color: var(--ide-ink);
+  font-size: 12.5px;
+}
+
+.input:focus,
+.select:focus,
+.textarea:focus {
+  border-color: var(--ide-accent-2);
+  outline: none;
+  box-shadow: 0 0 0 2px rgb(26 123 208 / 15%);
+}
+
+.input.invalid,
+.textarea.invalid {
+  border-color: var(--ide-bad);
+  box-shadow: 0 0 0 2px rgb(180 35 24 / 12%);
+}
+
+.textarea {
+  resize: vertical;
+  line-height: 1.45;
+}
+
+.select {
+  padding-right: 22px;
+}
+
+.checkbox {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12.5px;
+  cursor: pointer;
+}
+
+.checkbox input {
+  margin: 0;
+  accent-color: var(--ide-accent);
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 1px 7px;
+  border: 1px solid var(--ide-line-soft);
+  border-radius: 999px;
+  background: #ffffff;
+  color: var(--ide-muted);
+  font-size: 10.5px;
+  white-space: nowrap;
+}
+
+.chip.ok {
+  color: var(--ide-ok);
+  border-color: #a9d9bd;
+  background: var(--ide-ok-soft);
+}
+
+.chip.warn {
+  color: var(--ide-warn);
+  border-color: #efcf94;
+  background: var(--ide-warn-soft);
+}
+
+.chip.bad {
+  color: var(--ide-bad);
+  border-color: #f3b6b0;
+  background: var(--ide-bad-soft);
+}
+
+.chip.plain {
+  background: #eef2f7;
+}
+
+.muted {
+  color: var(--ide-muted);
+}
+
+.faint {
+  color: var(--ide-faint);
+}
+
+.small {
+  font-size: 11.5px;
+}
+
+.mono {
+  font-family: var(--font-mono);
+}
+
+.spacer {
+  flex: 1;
+}
+
+.divider-v {
+  width: 1px;
+  align-self: stretch;
+  margin: 4px 5px;
+  background: var(--ide-line);
+  border-right: 1px solid #ffffff;
+}
+
+.status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--ide-faint);
+  flex: none;
+}
+
+.status-dot.ok {
+  background: #1f9d55;
+}
+
+.status-dot.warn {
+  background: #e39a12;
+}
+
+.status-dot.bad {
+  background: #d92d20;
+}
+
+.status-dot.live {
+  background: #1f9d55;
+  box-shadow: 0 0 0 3px rgb(31 157 85 / 18%);
+}
+
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 30px 22px;
+  color: var(--ide-muted);
+  text-align: center;
+}
+
+.empty h3 {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ide-ink);
+}
+
+.empty p {
+  max-width: 340px;
+  line-height: 1.5;
+  font-size: 12px;
+}
+
+.kbd {
+  display: inline-block;
+  min-width: 18px;
+  padding: 0 4px;
+  border: 1px solid var(--ide-line);
+  border-bottom-width: 2px;
+  border-radius: 3px;
+  background: #ffffff;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  line-height: 16px;
+  text-align: center;
+  color: var(--ide-muted);
+}
